@@ -1,0 +1,686 @@
+[
+    {
+        "chapter_number": 1,
+        "chapter_title_english": "The Key",
+        "chapter_title_arabic": "الفاتحة",
+        "chapter_title_persian": "کليد"
+    },
+    {
+        "chapter_number": 2,
+        "chapter_title_english": "The Heifer",
+        "chapter_title_arabic": "البقرة",
+        "chapter_title_persian": "ماده گاو"
+    },
+    {
+        "chapter_number": 3,
+        "chapter_title_english": "The Amramites",
+        "chapter_title_arabic": "آل عمران",
+        "chapter_title_persian": "عمرانيان"
+    },
+    {
+        "chapter_number": 4,
+        "chapter_title_english": "The Women",
+        "chapter_title_arabic": "النساء",
+        "chapter_title_persian": "زنان"
+    },
+    {
+        "chapter_number": 5,
+        "chapter_title_english": "The Feast",
+        "chapter_title_arabic": "المائدة",
+        "chapter_title_persian": "ضيافت"
+    },
+    {
+        "chapter_number": 6,
+        "chapter_title_english": "The Livestock",
+        "chapter_title_arabic": "الأنعام",
+        "chapter_title_persian": "چارپايان"
+    },
+    {
+        "chapter_number": 7,
+        "chapter_title_english": "The Purgatory",
+        "chapter_title_arabic": "الأعراف",
+        "chapter_title_persian": "برزخ"
+    },
+    {
+        "chapter_number": 8,
+        "chapter_title_english": "The Spoils of War",
+        "chapter_title_arabic": "الأنفال",
+        "chapter_title_persian": "غنايم جنگی"
+    },
+    {
+        "chapter_number": 9,
+        "chapter_title_english": "Ultimatum",
+        "chapter_title_arabic": "براءة",
+        "chapter_title_persian": "اتمام حجت"
+    },
+    {
+        "chapter_number": 10,
+        "chapter_title_english": "Jonah",
+        "chapter_title_arabic": "يونس",
+        "chapter_title_persian": "يونس"
+    },
+    {
+        "chapter_number": 11,
+        "chapter_title_english": "Hood",
+        "chapter_title_arabic": "هود",
+        "chapter_title_persian": "هود"
+    },
+    {
+        "chapter_number": 12,
+        "chapter_title_english": "Joseph",
+        "chapter_title_arabic": "يوسف",
+        "chapter_title_persian": "يوسف"
+    },
+    {
+        "chapter_number": 13,
+        "chapter_title_english": "The Thunder",
+        "chapter_title_arabic": "الرعد",
+        "chapter_title_persian": "رعد"
+    },
+    {
+        "chapter_number": 14,
+        "chapter_title_english": "Abraham",
+        "chapter_title_arabic": "إبراهيم",
+        "chapter_title_persian": "ابراهيم"
+    },
+    {
+        "chapter_number": 15,
+        "chapter_title_english": "The Hijr Valley",
+        "chapter_title_arabic": "الحجر",
+        "chapter_title_persian": "وادی حجر"
+    },
+    {
+        "chapter_number": 16,
+        "chapter_title_english": "The Bee",
+        "chapter_title_arabic": "النّحل",
+        "chapter_title_persian": "زنبور"
+    },
+    {
+        "chapter_number": 17,
+        "chapter_title_english": "The Children of Israel",
+        "chapter_title_arabic": "بني إسرءيل",
+        "chapter_title_persian": "فرزندان اسرایيل"
+    },
+    {
+        "chapter_number": 18,
+        "chapter_title_english": "The Cave",
+        "chapter_title_arabic": "الكهف",
+        "chapter_title_persian": "غار"
+    },
+    {
+        "chapter_number": 19,
+        "chapter_title_english": "Mary",
+        "chapter_title_arabic": "مريم",
+        "chapter_title_persian": "مريم"
+    },
+    {
+        "chapter_number": 20,
+        "chapter_title_english": "T-H",
+        "chapter_title_arabic": "طه",
+        "chapter_title_persian": "طا ها"
+    },
+    {
+        "chapter_number": 21,
+        "chapter_title_english": "The Prophets",
+        "chapter_title_arabic": "الأنبياء",
+        "chapter_title_persian": "پيامبران"
+    },
+    {
+        "chapter_number": 22,
+        "chapter_title_english": "The Pilgrimage",
+        "chapter_title_arabic": "الحج",
+        "chapter_title_persian": "حج"
+    },
+    {
+        "chapter_number": 23,
+        "chapter_title_english": "The Believers",
+        "chapter_title_arabic": "المؤمنون",
+        "chapter_title_persian": "مؤمنان"
+    },
+    {
+        "chapter_number": 24,
+        "chapter_title_english": "The Light",
+        "chapter_title_arabic": "النّور",
+        "chapter_title_persian": "نور"
+    },
+    {
+        "chapter_number": 25,
+        "chapter_title_english": "The Statute Book",
+        "chapter_title_arabic": "الفرقان",
+        "chapter_title_persian": "کتاب قانون"
+    },
+    {
+        "chapter_number": 26,
+        "chapter_title_english": "The Poets",
+        "chapter_title_arabic": "الشعراء",
+        "chapter_title_persian": "شاعران"
+    },
+    {
+        "chapter_number": 27,
+        "chapter_title_english": "The Ant",
+        "chapter_title_arabic": "النّمل",
+        "chapter_title_persian": "مورچه"
+    },
+    {
+        "chapter_number": 28,
+        "chapter_title_english": "The History",
+        "chapter_title_arabic": "القصص",
+        "chapter_title_persian": "تاريخ"
+    },
+    {
+        "chapter_number": 29,
+        "chapter_title_english": "The Spider",
+        "chapter_title_arabic": "العنكبوت",
+        "chapter_title_persian": "عنکبوت"
+    },
+    {
+        "chapter_number": 30,
+        "chapter_title_english": "The Romans",
+        "chapter_title_arabic": "الروم",
+        "chapter_title_persian": "روميان"
+    },
+    {
+        "chapter_number": 31,
+        "chapter_title_english": "Luqmaan",
+        "chapter_title_arabic": "لقمان",
+        "chapter_title_persian": "لقمان"
+    },
+    {
+        "chapter_number": 32,
+        "chapter_title_english": "Prostration",
+        "chapter_title_arabic": "السجدة",
+        "chapter_title_persian": "سجده"
+    },
+    {
+        "chapter_number": 33,
+        "chapter_title_english": "The Parties",
+        "chapter_title_arabic": "الأحزاب",
+        "chapter_title_persian": "گروه ها"
+    },
+    {
+        "chapter_number": 34,
+        "chapter_title_english": "Sheba",
+        "chapter_title_arabic": "سبإ",
+        "chapter_title_persian": "سبا"
+    },
+    {
+        "chapter_number": 35,
+        "chapter_title_english": "Initiator",
+        "chapter_title_arabic": "فاطر",
+        "chapter_title_persian": "آغازکننده"
+    },
+    {
+        "chapter_number": 36,
+        "chapter_title_english": "Y-S",
+        "chapter_title_arabic": "يس",
+        "chapter_title_persian": "ی.س"
+    },
+    {
+        "chapter_number": 37,
+        "chapter_title_english": "The Arrangers",
+        "chapter_title_arabic": "الصّافات",
+        "chapter_title_persian": "تنظيم کنندگان"
+    },
+    {
+        "chapter_number": 38,
+        "chapter_title_english": "S",
+        "chapter_title_arabic": "ص",
+        "chapter_title_persian": "ص"
+    },
+    {
+        "chapter_number": 39,
+        "chapter_title_english": "The Throngs",
+        "chapter_title_arabic": "الزُّمر",
+        "chapter_title_persian": "فوج فوج"
+    },
+    {
+        "chapter_number": 40,
+        "chapter_title_english": "Forgiver",
+        "chapter_title_arabic": "غافر",
+        "chapter_title_persian": "عفوکننده"
+    },
+    {
+        "chapter_number": 41,
+        "chapter_title_english": "Detailed",
+        "chapter_title_arabic": "فصلت",
+        "chapter_title_persian": "جزئيات کامل"
+    },
+    {
+        "chapter_number": 42,
+        "chapter_title_english": "Consultation",
+        "chapter_title_arabic": "الشورى",
+        "chapter_title_persian": "مشورت"
+    },
+    {
+        "chapter_number": 43,
+        "chapter_title_english": "The Ornaments",
+        "chapter_title_arabic": "الزخرف",
+        "chapter_title_persian": "تزيینات"
+    },
+    {
+        "chapter_number": 44,
+        "chapter_title_english": "The Smoke",
+        "chapter_title_arabic": "الدّخان",
+        "chapter_title_persian": "دود"
+    },
+    {
+        "chapter_number": 45,
+        "chapter_title_english": "The Kneeling",
+        "chapter_title_arabic": "الجاثية",
+        "chapter_title_persian": "زانوزدن"
+    },
+    {
+        "chapter_number": 46,
+        "chapter_title_english": "The Dunes",
+        "chapter_title_arabic": "الأحقاف",
+        "chapter_title_persian": "تپه های شنی"
+    },
+    {
+        "chapter_number": 47,
+        "chapter_title_english": "Muhammed",
+        "chapter_title_arabic": "محمد",
+        "chapter_title_persian": "محمد"
+    },
+    {
+        "chapter_number": 48,
+        "chapter_title_english": "Victory",
+        "chapter_title_arabic": "الفتح",
+        "chapter_title_persian": "پيروزی"
+    },
+    {
+        "chapter_number": 49,
+        "chapter_title_english": "The Walls",
+        "chapter_title_arabic": "الحجرات",
+        "chapter_title_persian": "ديوارها"
+    },
+    {
+        "chapter_number": 50,
+        "chapter_title_english": "Q",
+        "chapter_title_arabic": "ق",
+        "chapter_title_persian": "ق"
+    },
+    {
+        "chapter_number": 51,
+        "chapter_title_english": "Driver of the Winds",
+        "chapter_title_arabic": "الذاريات",
+        "chapter_title_persian": "حرکت دهندگان بادها"
+    },
+    {
+        "chapter_number": 52,
+        "chapter_title_english": "Mount Sinai",
+        "chapter_title_arabic": "الطور",
+        "chapter_title_persian": "کوه سينا"
+    },
+    {
+        "chapter_number": 53,
+        "chapter_title_english": "The Stars",
+        "chapter_title_arabic": "النّجم",
+        "chapter_title_persian": "ستارگان"
+    },
+    {
+        "chapter_number": 54,
+        "chapter_title_english": "The Moon",
+        "chapter_title_arabic": "القمر",
+        "chapter_title_persian": "ماه"
+    },
+    {
+        "chapter_number": 55,
+        "chapter_title_english": "The Gracious",
+        "chapter_title_arabic": "الرحمن",
+        "chapter_title_persian": "بخشنده ترين"
+    },
+    {
+        "chapter_number": 56,
+        "chapter_title_english": "The Inevitable",
+        "chapter_title_arabic": "الواقعة",
+        "chapter_title_persian": "اجتناب ناپذير"
+    },
+    {
+        "chapter_number": 57,
+        "chapter_title_english": "Iron",
+        "chapter_title_arabic": "الحديد",
+        "chapter_title_persian": "آهن"
+    },
+    {
+        "chapter_number": 58,
+        "chapter_title_english": "The Debate",
+        "chapter_title_arabic": "المجادلة",
+        "chapter_title_persian": "مناظره"
+    },
+    {
+        "chapter_number": 59,
+        "chapter_title_english": "The Exodus",
+        "chapter_title_arabic": "الحشر",
+        "chapter_title_persian": "خروج دسته جمعی"
+    },
+    {
+        "chapter_number": 60,
+        "chapter_title_english": "The Test",
+        "chapter_title_arabic": "الممتحنة",
+        "chapter_title_persian": "آزمايش"
+    },
+    {
+        "chapter_number": 61,
+        "chapter_title_english": "The Column",
+        "chapter_title_arabic": "الصف",
+        "chapter_title_persian": "صف"
+    },
+    {
+        "chapter_number": 62,
+        "chapter_title_english": "Friday",
+        "chapter_title_arabic": "الجمعة",
+        "chapter_title_persian": "جمعه"
+    },
+    {
+        "chapter_number": 63,
+        "chapter_title_english": "The Hypocrites",
+        "chapter_title_arabic": "المنافقون",
+        "chapter_title_persian": "منافقان"
+    },
+    {
+        "chapter_number": 64,
+        "chapter_title_english": "Mutual Blaming",
+        "chapter_title_arabic": "التغابن",
+        "chapter_title_persian": "سرزنش دوجانبه"
+    },
+    {
+        "chapter_number": 65,
+        "chapter_title_english": "Divorce",
+        "chapter_title_arabic": "الطلاق",
+        "chapter_title_persian": "طلاق"
+    },
+    {
+        "chapter_number": 66,
+        "chapter_title_english": "Prohibition",
+        "chapter_title_arabic": "التحريم",
+        "chapter_title_persian": "تحريم"
+    },
+    {
+        "chapter_number": 67,
+        "chapter_title_english": "Kingship",
+        "chapter_title_arabic": "الملك",
+        "chapter_title_persian": "سلطنت"
+    },
+    {
+        "chapter_number": 68,
+        "chapter_title_english": "The Pen",
+        "chapter_title_arabic": "القلم",
+        "chapter_title_persian": "قلم"
+    },
+    {
+        "chapter_number": 69,
+        "chapter_title_english": "Incontestable",
+        "chapter_title_arabic": "الحاقة",
+        "chapter_title_persian": "غیر قابل بحث"
+    },
+    {
+        "chapter_number": 70,
+        "chapter_title_english": "The Heights",
+        "chapter_title_arabic": "المعارج",
+        "chapter_title_persian": "عرش اعلا"
+    },
+    {
+        "chapter_number": 71,
+        "chapter_title_english": "Noah",
+        "chapter_title_arabic": "نوح",
+        "chapter_title_persian": "نوح"
+    },
+    {
+        "chapter_number": 72,
+        "chapter_title_english": "Jinns",
+        "chapter_title_arabic": "الجن",
+        "chapter_title_persian": "جنيان"
+    },
+    {
+        "chapter_number": 73,
+        "chapter_title_english": "Cloaked",
+        "chapter_title_arabic": "المزمل",
+        "chapter_title_persian": "جامه به خود پيچيده"
+    },
+    {
+        "chapter_number": 74,
+        "chapter_title_english": "The Hidden Secret",
+        "chapter_title_arabic": "المدثر",
+        "chapter_title_persian": "راز نهفته"
+    },
+    {
+        "chapter_number": 75,
+        "chapter_title_english": "Resurrection",
+        "chapter_title_arabic": "القيامة",
+        "chapter_title_persian": "قيامت"
+    },
+    {
+        "chapter_number": 76,
+        "chapter_title_english": "The Human",
+        "chapter_title_arabic": "الانسان",
+        "chapter_title_persian": "انسان"
+    },
+    {
+        "chapter_number": 77,
+        "chapter_title_english": "Dispatched",
+        "chapter_title_arabic": "المرسلات",
+        "chapter_title_persian": "فرستاده شدگان"
+    },
+    {
+        "chapter_number": 78,
+        "chapter_title_english": "The Event",
+        "chapter_title_arabic": "النبأ",
+        "chapter_title_persian": "رويداد"
+    },
+    {
+        "chapter_number": 79,
+        "chapter_title_english": "The Snatchers",
+        "chapter_title_arabic": "النازعات",
+        "chapter_title_persian": "ربايندگان"
+    },
+    {
+        "chapter_number": 80,
+        "chapter_title_english": "He Frowned",
+        "chapter_title_arabic": "عبس",
+        "chapter_title_persian": "چهره درهم کشيد"
+    },
+    {
+        "chapter_number": 81,
+        "chapter_title_english": "The Rolling",
+        "chapter_title_arabic": "التكوير",
+        "chapter_title_persian": "غلتان"
+    },
+    {
+        "chapter_number": 82,
+        "chapter_title_english": "The Shattering",
+        "chapter_title_arabic": "الانفطار",
+        "chapter_title_persian": "متلاشی شدن"
+    },
+    {
+        "chapter_number": 83,
+        "chapter_title_english": "The Cheaters",
+        "chapter_title_arabic": "المطففين",
+        "chapter_title_persian": "متقلبان"
+    },
+    {
+        "chapter_number": 84,
+        "chapter_title_english": "The Rupture",
+        "chapter_title_arabic": "الانشقاق",
+        "chapter_title_persian": "گسيختن"
+    },
+    {
+        "chapter_number": 85,
+        "chapter_title_english": "The Galaxies",
+        "chapter_title_arabic": "البروج",
+        "chapter_title_persian": "کهکشان ها"
+    },
+    {
+        "chapter_number": 86,
+        "chapter_title_english": "The Bright Star",
+        "chapter_title_arabic": "الطارق",
+        "chapter_title_persian": "ستارهٔ درخشان"
+    },
+    {
+        "chapter_number": 87,
+        "chapter_title_english": "The Most High",
+        "chapter_title_arabic": "الأعلى",
+        "chapter_title_persian": "بلندمرتبه ترين"
+    },
+    {
+        "chapter_number": 88,
+        "chapter_title_english": "Overwhelming",
+        "chapter_title_arabic": "الغاشية",
+        "chapter_title_persian": "در برگيرنده"
+    },
+    {
+        "chapter_number": 89,
+        "chapter_title_english": "Dawn",
+        "chapter_title_arabic": "الفجر",
+        "chapter_title_persian": "فجر"
+    },
+    {
+        "chapter_number": 90,
+        "chapter_title_english": "The Town",
+        "chapter_title_arabic": "البلد",
+        "chapter_title_persian": "شهر"
+    },
+    {
+        "chapter_number": 91,
+        "chapter_title_english": "The Sun",
+        "chapter_title_arabic": "الشمس",
+        "chapter_title_persian": "خورشيد"
+    },
+    {
+        "chapter_number": 92,
+        "chapter_title_english": "The Night",
+        "chapter_title_arabic": "الليل",
+        "chapter_title_persian": "شب"
+    },
+    {
+        "chapter_number": 93,
+        "chapter_title_english": "The Forenoon",
+        "chapter_title_arabic": "الضحى",
+        "chapter_title_persian": "پيش از ظهر"
+    },
+    {
+        "chapter_number": 94,
+        "chapter_title_english": "Cooling the Temper",
+        "chapter_title_arabic": "الشرح",
+        "chapter_title_persian": "خونسردی"
+    },
+    {
+        "chapter_number": 95,
+        "chapter_title_english": "The Fig",
+        "chapter_title_arabic": "التين",
+        "chapter_title_persian": "انجير"
+    },
+    {
+        "chapter_number": 96,
+        "chapter_title_english": "The Embryo",
+        "chapter_title_arabic": "العلق",
+        "chapter_title_persian": "رویان معلق"
+    },
+    {
+        "chapter_number": 97,
+        "chapter_title_english": "The Destiny",
+        "chapter_title_arabic": "القدر",
+        "chapter_title_persian": "سرنوشت"
+    },
+    {
+        "chapter_number": 98,
+        "chapter_title_english": "The Proof",
+        "chapter_title_arabic": "البينة",
+        "chapter_title_persian": "مدرک"
+    },
+    {
+        "chapter_number": 99,
+        "chapter_title_english": "The Quake",
+        "chapter_title_arabic": "الزلزلة",
+        "chapter_title_persian": "زلزله"
+    },
+    {
+        "chapter_number": 100,
+        "chapter_title_english": "The Gallopers",
+        "chapter_title_arabic": "العاديات",
+        "chapter_title_persian": "تاخت کنندگان"
+    },
+    {
+        "chapter_number": 101,
+        "chapter_title_english": "The Shocker",
+        "chapter_title_arabic": "القارعة",
+        "chapter_title_persian": "تکان دهنده"
+    },
+    {
+        "chapter_number": 102,
+        "chapter_title_english": "Hoarding",
+        "chapter_title_arabic": "التكاثر",
+        "chapter_title_persian": "مال اندوزی"
+    },
+    {
+        "chapter_number": 103,
+        "chapter_title_english": "The Afternoon",
+        "chapter_title_arabic": "العصر",
+        "chapter_title_persian": "بعد از ظهر"
+    },
+    {
+        "chapter_number": 104,
+        "chapter_title_english": "The Backbiter",
+        "chapter_title_arabic": "الهمزة",
+        "chapter_title_persian": "غيبت کننده"
+    },
+    {
+        "chapter_number": 105,
+        "chapter_title_english": "The Elephant",
+        "chapter_title_arabic": "الفيل",
+        "chapter_title_persian": "فيل"
+    },
+    {
+        "chapter_number": 106,
+        "chapter_title_english": "Quraish Tribe",
+        "chapter_title_arabic": "قريش",
+        "chapter_title_persian": "قبیلهٔ قريش"
+    },
+    {
+        "chapter_number": 107,
+        "chapter_title_english": "Charity",
+        "chapter_title_arabic": "الماعون",
+        "chapter_title_persian": "انفاق"
+    },
+    {
+        "chapter_number": 108,
+        "chapter_title_english": "Bounty",
+        "chapter_title_arabic": "الكوثر",
+        "chapter_title_persian": "نعمات"
+    },
+    {
+        "chapter_number": 109,
+        "chapter_title_english": "The Disbelievers",
+        "chapter_title_arabic": "الكافرون",
+        "chapter_title_persian": "کافران"
+    },
+    {
+        "chapter_number": 110,
+        "chapter_title_english": "Triumph",
+        "chapter_title_arabic": "النّصر",
+        "chapter_title_persian": "پيروزی"
+    },
+    {
+        "chapter_number": 111,
+        "chapter_title_english": "Thorns",
+        "chapter_title_arabic": "المسد",
+        "chapter_title_persian": "خارها"
+    },
+    {
+        "chapter_number": 112,
+        "chapter_title_english": "Absoluteness",
+        "chapter_title_arabic": "الإخلاص",
+        "chapter_title_persian": "مطلق"
+    },
+    {
+        "chapter_number": 113,
+        "chapter_title_english": "Daybreak",
+        "chapter_title_arabic": "الفلق",
+        "chapter_title_persian": "سپیده دم"
+    },
+    {
+        "chapter_number": 114,
+        "chapter_title_english": "People",
+        "chapter_title_arabic": "الناس",
+        "chapter_title_persian": "مردم"
+    }
+]
