@@ -1,0 +1,18 @@
+.navbar {
+    margin-top: 1em;
+    border-radius: 1em;
+}
+    
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+}
+    
+.title {
+    flex-grow: 1;
+}
+    
+.search-fields {
+    display: flex;
+    justify-content: flex-end;
+}
