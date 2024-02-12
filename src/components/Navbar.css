@@ -10,9 +10,11 @@
     
 .title {
     flex-grow: 1;
+    color: #000;
 }
     
 .search-fields {
     display: flex;
     justify-content: flex-end;
+    padding: 1em;
 }
