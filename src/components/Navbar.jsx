@@ -27,20 +27,18 @@ function Navbar({ toggleTheme }) {
 
   return (
     <AppBar
-      position="sticky"
+      position="fixed"
       sx={{
-        backgroundColor: theme.palette.primary.main,
-        mt: 1,
-        borderRadius: 1,
+        display: "block",
+        backgroundColor: theme.palette.secondary.main,
+        paddingY: "0.5em", // Add padding for top and bottom
       }}
     >
       <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-        {/* Grouping the two Typography components into a Box for better alignment */}
-        {/* <Box sx={{ flexGrow: 1, display: "flex" }} spacing={2}> */}
         <Typography
           variant="h6"
           sx={{
-            color: theme.palette.secondary.main,
+            color: theme.palette.text.main,
             display: { xs: "none", sm: "none", md: "block", lg: "block" },
           }}
         >
@@ -49,15 +47,12 @@ function Navbar({ toggleTheme }) {
         <Typography
           variant="h6"
           sx={{
-            color: theme.palette.secondary.main,
+            color: theme.palette.text.main,
             display: { xs: "none", sm: "none", md: "none", lg: "block" },
           }}
         >
           به نام خداوند بخشندترین، مهربانترین
         </Typography>
-        {/* </Box> */}
-
-        {/* Search Fields - Now using Box for alignment */}
         <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
           <Grid container spacing={2} alignItems="center">
             <Grid item>
@@ -85,12 +80,12 @@ function Navbar({ toggleTheme }) {
               />
             </Grid>
             <Grid item>
-              <Button variant="contained" color="primary">
+              <Button variant="contained" color="button">
                 جستوجو
               </Button>
             </Grid>
             <Grid item>
-              <Button variant="contained" color="primary" onClick={toggleTheme}>
+              <Button variant="contained" color="button" onClick={toggleTheme}>
                 Toggle Theme
               </Button>
             </Grid>
