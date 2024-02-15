@@ -1,17 +1,17 @@
 const lightTheme = {
   palette: {
     primary: {
-      main: "#f6f2eb",
+      main: "#f9f7f0",
     },
     secondary: {
-      main: "#add8e6",
+      main: "#d0c7b6",
     },
     text: {
       main: "#000000",
       secondary: "#424242",
     },
     button: {
-      main: "#7ebb87",
+      main: "#4285F4",
     },
   },
 };
@@ -19,13 +19,14 @@ const lightTheme = {
 const darkTheme = {
   palette: {
     primary: {
-      main: "#000000", // Navigation bar background
+      main: "#ffffff",
     },
     secondary: {
-      main: "#000000", // App title color
+      main: "#393939",
     },
     text: {
-      primary: "#000000", // Text color
+      main: "#ffffff",
+      secondary: "#AEAEAE",
     },
     button: {
       main: "#037336",

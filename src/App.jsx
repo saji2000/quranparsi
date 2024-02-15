@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
+import Screen from "./components/Screen";
 import { lightTheme, darkTheme } from "./theme";
 import "./App.css";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { Container, Box } from "@mui/material";
 
 function App() {
   // Checking system preference and setting the default theme (dark or light)
@@ -28,7 +30,10 @@ function App() {
 
   return (
     <ThemeProvider theme={createTheme(theme)}>
-      <Navbar toggleTheme={toggleTheme} />
+      <Box>
+        <Navbar toggleTheme={toggleTheme} />
+        <Screen />
+      </Box>
     </ThemeProvider>
   );
 }
