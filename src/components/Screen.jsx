@@ -24,13 +24,13 @@ const Screen = () => {
             <Typography
               gutterBottom
               dir="rtl"
-              variant="h4"
+              variant="h5"
               sx={{ color: theme.palette.text.main }}
             >{`${verse.arabic_text} ${verse.verse_num}`}</Typography>
             {/* <Typography gutterBottom>{verse.english_text}</Typography> */}
             <Typography
               dir="rtl"
-              variant="h4"
+              variant="h5"
               sx={{ color: theme.palette.text.main }}
             >
               {verse.persian_text}{" "}

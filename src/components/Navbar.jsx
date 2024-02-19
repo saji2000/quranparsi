@@ -7,8 +7,11 @@ import {
   TextField,
   Button,
   useTheme,
-  Box, // Importing Box from MUI
+  Box,
+  Switch,
 } from "@mui/material";
+
+import { ModeNight } from "@mui/icons-material";
 
 function Navbar({ toggleTheme }) {
   const theme = useTheme();
@@ -93,13 +96,16 @@ function Navbar({ toggleTheme }) {
                 </Button>
               </Grid>
               <Grid item>
-                <Button
+                <Switch onChange={toggleTheme} />
+                <ModeNight />
+
+                {/* <Button
                   variant="contained"
                   color="button"
                   onClick={toggleTheme}
                 >
                   Toggle Theme
-                </Button>
+                </Button> */}
               </Grid>
             </Grid>
           </Box>
