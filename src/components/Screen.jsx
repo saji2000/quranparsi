@@ -13,8 +13,9 @@ const Screen = () => {
     <Container
       maxWidth="100%"
       sx={{
+        display: "block",
         backgroundColor: theme.palette.primary.main,
-        paddingTop: theme.spacing(12),
+        paddingTop: theme.spacing("7em"),
         paddingBottom: theme.spacing(4),
       }}
     >

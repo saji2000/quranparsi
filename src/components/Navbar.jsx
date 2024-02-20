@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import BasicMenu from "./BasicMenu";
 import {
   AppBar,
   Toolbar,
@@ -38,6 +39,8 @@ function Navbar({ toggleTheme }) {
         }}
       >
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+          <BasicMenu toggleTheme={toggleTheme} sx={{ marginRight: "0.5em" }} />
+
           <Typography
             variant="h6"
             sx={{
@@ -54,7 +57,7 @@ function Navbar({ toggleTheme }) {
               display: { xs: "none", sm: "none", md: "none", lg: "block" },
             }}
           >
-            به نام خداوند بخشندترین، مهربانترین
+            به نام خداوند بخشنده ترین، مهربانترین
           </Typography>
           <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
             <Grid container spacing={2} alignItems="center">
@@ -96,9 +99,6 @@ function Navbar({ toggleTheme }) {
                 </Button>
               </Grid>
               <Grid item>
-                <Switch onChange={toggleTheme} />
-                <ModeNight />
-
                 {/* <Button
                   variant="contained"
                   color="button"
