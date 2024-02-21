@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Screen from "./components/Screen";
+import Footer from "./components/Footer";
 import { lightTheme, darkTheme } from "./theme";
 import "./App.css";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
@@ -30,9 +31,10 @@ function App() {
 
   return (
     <ThemeProvider theme={createTheme(theme)}>
-      <Box>
+      <Box flex="block">
         <Navbar toggleTheme={toggleTheme} />
         <Screen />
+        <Footer />
       </Box>
     </ThemeProvider>
   );

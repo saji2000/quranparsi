@@ -11,7 +11,7 @@ const Screen = () => {
 
   return (
     <Container
-      maxWidth="100%"
+      maxWidth={false}
       sx={{
         display: "block",
         backgroundColor: theme.palette.primary.main,

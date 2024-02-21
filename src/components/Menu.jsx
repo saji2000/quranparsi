@@ -1,7 +1,8 @@
-import * as React from "react";
+import { useState } from "react";
 
 import {
   Button,
+  Link,
   Menu,
   MenuItem,
   Switch,
@@ -14,7 +15,7 @@ import IconButton from "@mui/material/IconButton";
 import { ModeNight, MoreVert } from "@mui/icons-material";
 
 export default function BasicMenu({ toggleTheme }) {
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -45,12 +46,17 @@ export default function BasicMenu({ toggleTheme }) {
         MenuListProps={{
           "aria-labelledby": "basic-button",
         }}
+        sx={{ color: theme.palette.primary.main }}
       >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>
+        <MenuItem>
           <ModeNight />
           <Switch onClick={toggleTheme} />
+        </MenuItem>
+        <MenuItem>
+          <Link href="https://discord.gg/submission">دیسکورد</Link>
+        </MenuItem>
+        <MenuItem>
+          <Link href="https://www.tiktok.com/@sajadthesubmitter/">تیکتاک</Link>
         </MenuItem>
       </Menu>
     </div>

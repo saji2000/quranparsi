@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import BasicMenu from "./BasicMenu";
+import BasicMenu from "./Menu";
 import {
   AppBar,
   Toolbar,
@@ -9,10 +9,7 @@ import {
   Button,
   useTheme,
   Box,
-  Switch,
 } from "@mui/material";
-
-import { ModeNight } from "@mui/icons-material";
 
 function Navbar({ toggleTheme }) {
   const theme = useTheme();
