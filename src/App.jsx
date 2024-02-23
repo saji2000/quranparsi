@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import { lightTheme, darkTheme } from "./theme";
 import "./App.css";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { QuranProvider } from "./context/QuranContext";
 import { Container, Box } from "@mui/material";
 
 function App() {
@@ -31,11 +32,13 @@ function App() {
 
   return (
     <ThemeProvider theme={createTheme(theme)}>
-      <Box flex="block">
-        <Navbar toggleTheme={toggleTheme} />
-        <Screen />
-        <Footer />
-      </Box>
+      <QuranProvider>
+        <Box flex="block">
+          <Navbar toggleTheme={toggleTheme} />
+          <Screen />
+          <Footer />
+        </Box>
+      </QuranProvider>
     </ThemeProvider>
   );
 }

@@ -32,7 +32,7 @@ const darkTheme = {
       main: "#191919",
     },
     secondary: {
-      main: "#393939",
+      main: "#444444",
     },
     text: {
       main: "#ffffff",
