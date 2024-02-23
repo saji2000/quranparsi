@@ -46,7 +46,6 @@ export default function BasicMenu({ toggleTheme }) {
         MenuListProps={{
           "aria-labelledby": "basic-button",
         }}
-        sx={{ color: theme.palette.primary.main }}
       >
         <MenuItem>
           <ModeNight />

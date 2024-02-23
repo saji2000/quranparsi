@@ -14,12 +14,22 @@ const lightTheme = {
       main: "#4285F4",
     },
   },
+  components: {
+    MuiLink: {
+      // Customize the default Link component
+      styleOverrides: {
+        root: {
+          color: "black", // Default link color will be black
+        },
+      },
+    },
+  },
 };
 
 const darkTheme = {
   palette: {
     primary: {
-      main: "#000000",
+      main: "#191919",
     },
     secondary: {
       main: "#393939",
@@ -30,6 +40,16 @@ const darkTheme = {
     },
     button: {
       main: "#037336",
+    },
+  },
+  components: {
+    MuiLink: {
+      // Customize the default Link component
+      styleOverrides: {
+        root: {
+          color: "black", // Default link color will be black
+        },
+      },
     },
   },
 };

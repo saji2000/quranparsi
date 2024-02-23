@@ -38,7 +38,7 @@ const Screen = () => {
             </Typography>
             {verse.footnote && (
               <>
-                <Divider />
+                <Divider sx={{ background: theme.palette.text.main }} />
                 <Typography
                   variant="h6"
                   sx={{ color: theme.palette.text.main }}
