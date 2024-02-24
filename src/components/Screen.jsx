@@ -23,6 +23,7 @@ const Screen = () => {
         verses.map((verse) => (
           <Box key={verse.verse_num} sx={{ marginBottom: theme.spacing(2) }}>
             <Typography
+              className="amiri-regular"
               gutterBottom
               dir="rtl"
               variant="h5"
