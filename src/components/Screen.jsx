@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { QuranProvider } from "../context/QuranContext";
 import data from "../data/sample.json";
 import { Typography, useTheme, Box, Container, Divider } from "@mui/material";
 
@@ -9,6 +10,8 @@ const Screen = () => {
   }, []);
 
   const theme = useTheme();
+
+  const context = useContext(QuranProvider);
 
   // const [currentChapter, setCurrentChapter] = useState(1); // Start with chapter 1
 
@@ -46,7 +49,7 @@ const Screen = () => {
         paddingBottom: theme.spacing(4),
       }}
     >
-      {console.log("verses:", verses)}
+      {/* {console.log("verses:", verses)} */}
       {verses.length > 0 ? (
         verses.map((verse) => (
           <Box key={verse.verse_num} sx={{ marginBottom: theme.spacing(2) }}>

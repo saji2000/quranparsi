@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { QuranContext } from "../context/QuranContext";
 import BasicMenu from "./Menu";
 import {
   AppBar,
@@ -12,12 +13,22 @@ import {
 } from "@mui/material";
 
 function Navbar({ toggleTheme }) {
+  const {
+    chapter,
+    verse,
+    isSubmitted,
+    setChapter,
+    setVerse,
+    handleSearchSubmit,
+  } = useContext(QuranContext);
+
+  console.log(isSubmitted);
   const theme = useTheme();
   const [chapterInput, setChapterInput] = useState("");
   const [verseInput, setVerseInput] = useState("");
 
   const handleChapterInputChange = (event) => {
-    const { value } = event.target;
+    const { verse } = event.target;
     setChapterInput(value.replace(/[^0-9۰-۹]/g, ""));
   };
 
