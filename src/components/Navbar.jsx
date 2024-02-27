@@ -16,26 +16,33 @@ function Navbar({ toggleTheme }) {
   const {
     chapter,
     verse,
-    isSubmitted,
+    // isSubmitted,
     setChapter,
     setVerse,
-    handleSearchSubmit,
+    // handleSearchSubmit,
   } = useContext(QuranContext);
 
-  console.log(isSubmitted);
+  console.log(verse);
   const theme = useTheme();
-  const [chapterInput, setChapterInput] = useState("");
-  const [verseInput, setVerseInput] = useState("");
 
-  const handleChapterInputChange = (event) => {
-    const { verse } = event.target;
+  const [verseInput, setVerseInput] = useState(1);
+  const [chapterInput, setChapterInput] = useState(1);
+
+  const handleChapterChange = (event) => {
+    const { value } = event.target;
     setChapterInput(value.replace(/[^0-9۰-۹]/g, ""));
   };
 
-  const handleVerseInputChange = (event) => {
+  const handleVerseChange = (event) => {
     const { value } = event.target;
     setVerseInput(value.replace(/[^0-9۰-۹]/g, ""));
   };
+
+  const onSubmit = () => {
+    setVerse(verseInput);
+    setChapter(chapterInput);
+  };
+
   return (
     <div>
       <AppBar
@@ -77,7 +84,7 @@ function Navbar({ toggleTheme }) {
                   size="small"
                   placeholder="شماره سوره وارد کنید"
                   value={chapterInput}
-                  onChange={handleChapterInputChange}
+                  onChange={handleChapterChange}
                   inputProps={{
                     inputMode: "numeric",
                     pattern: "[0-9۰-۹]*",
@@ -93,7 +100,7 @@ function Navbar({ toggleTheme }) {
                   size="small"
                   placeholder="شماره ایه وارد کنید"
                   value={verseInput}
-                  onChange={handleVerseInputChange}
+                  onChange={handleVerseChange}
                   inputProps={{
                     inputMode: "numeric",
                     pattern: "[0-9۰-۹]*",
@@ -102,18 +109,9 @@ function Navbar({ toggleTheme }) {
                 />
               </Grid>
               <Grid item>
-                <Button variant="contained" color="button">
+                <Button variant="contained" color="button" onClick={onSubmit}>
                   جستوجو
                 </Button>
-              </Grid>
-              <Grid item>
-                {/* <Button
-                  variant="contained"
-                  color="button"
-                  onClick={toggleTheme}
-                >
-                  Toggle Theme
-                </Button> */}
               </Grid>
             </Grid>
           </Box>

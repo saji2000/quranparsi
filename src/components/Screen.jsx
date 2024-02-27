@@ -1,17 +1,18 @@
 import { useEffect, useState, useContext } from "react";
-import { QuranProvider } from "../context/QuranContext";
-import data from "../data/sample.json";
+import { QuranContext } from "../context/QuranContext";
+import data from "../data/translation.json";
 import { Typography, useTheme, Box, Container, Divider } from "@mui/material";
 
 const Screen = () => {
+  const { chapter, verse } = useContext(QuranContext);
   const [verses, setVerses] = useState([]);
   useEffect(() => {
-    setVerses(data);
-  }, []);
+    setVerses(data.filter((d) => d["sura_num"] == chapter));
+  }, [chapter]);
 
   const theme = useTheme();
 
-  const context = useContext(QuranProvider);
+  // const context = useContext(QuranProvider);
 
   // const [currentChapter, setCurrentChapter] = useState(1); // Start with chapter 1
 
@@ -82,7 +83,7 @@ const Screen = () => {
           </Box>
         ))
       ) : (
-        <Typography>Loading...</Typography>
+        <Typography variant="h4">Loading...</Typography>
       )}
     </Container>
   );
