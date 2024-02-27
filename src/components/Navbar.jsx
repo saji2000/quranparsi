@@ -13,16 +13,8 @@ import {
 } from "@mui/material";
 
 function Navbar({ toggleTheme }) {
-  const {
-    chapter,
-    verse,
-    // isSubmitted,
-    setChapter,
-    setVerse,
-    // handleSearchSubmit,
-  } = useContext(QuranContext);
+  const { setChapter, setVerse } = useContext(QuranContext);
 
-  console.log(verse);
   const theme = useTheme();
 
   const [verseInput, setVerseInput] = useState(1);
