@@ -1,14 +1,21 @@
 import { useEffect, useState, useContext } from "react";
 import { QuranContext } from "../context/QuranContext";
 import data from "../data/translation.json";
+import titles from "../data/titles.json";
 import { Typography, useTheme, Box, Container, Divider } from "@mui/material";
 
 const Screen = () => {
   const { chapter, verse } = useContext(QuranContext);
   const [verses, setVerses] = useState([]);
+  const [title, setTitle] = useState([]);
   useEffect(() => {
     setVerses(data.filter((d) => d["sura_num"] == chapter));
   }, [chapter]);
+
+  useEffect(() => {
+    setTitle(titles.filter((d) => d["chapter_num"] == chapter));
+  }, [chapter]);
+  console.log(title);
 
   const theme = useTheme();
 
@@ -50,10 +57,11 @@ const Screen = () => {
         paddingBottom: theme.spacing(4),
       }}
     >
+      <Typography variant="h5">{title.chapter_title_arabic}</Typography>
       {/* {console.log("verses:", verses)} */}
       {verses.length > 0 ? (
         verses.map((verse) => (
-          <Box key={verse.verse_num} sx={{ marginBottom: theme.spacing(2) }}>
+          <Box key={verse.verse_num} sx={{ marginBottom: theme.spacing(5) }}>
             <Typography
               className="amiri-regular"
               gutterBottom
