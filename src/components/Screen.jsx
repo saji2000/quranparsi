@@ -8,6 +8,7 @@ const Screen = () => {
   const { chapter, verse } = useContext(QuranContext);
   const [verses, setVerses] = useState([]);
   const [title, setTitle] = useState([]);
+
   useEffect(() => {
     setVerses(data.filter((d) => d["sura_num"] == chapter));
   }, [chapter]);
@@ -18,34 +19,6 @@ const Screen = () => {
   console.log(title);
 
   const theme = useTheme();
-
-  // const context = useContext(QuranProvider);
-
-  // const [currentChapter, setCurrentChapter] = useState(1); // Start with chapter 1
-
-  // const fetchData = async (filePath) => {
-  //   try {
-  //     const response = await fetch(filePath);
-  //     if (!response.ok) {
-  //       throw new Error(`Error fetching data: ${response.status}`);
-  //     }
-  //     console.log("response:", response);
-
-  //     const data = await response.json();
-  //     console.log("data:", data);
-
-  //     return data;
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   const filePath = `../data/quran_chapters/chapter_${currentChapter}.json`;
-  //   fetchData(filePath)
-  //     .then((data) => setVerses(data))
-  //     .catch((error) => console.log(error));
-  // }, [currentChapter]);
 
   return (
     <Container
