@@ -16,6 +16,16 @@ const Screen = () => {
   useEffect(() => {
     setTitle(titles.filter((d) => d["chapter_num"] == chapter));
   }, [chapter]);
+
+  useEffect(() => {
+    if (verse && document.getElementById(verse)) {
+      getElementById(verse).scrollIntoView({
+        behaviour: "smooth",
+        block: "start",
+      });
+    }
+  }, [verse]);
+
   console.log(title);
 
   const theme = useTheme();
@@ -34,7 +44,11 @@ const Screen = () => {
       {/* {console.log("verses:", verses)} */}
       {verses.length > 0 ? (
         verses.map((verse) => (
-          <Box key={verse.verse_num} sx={{ marginBottom: theme.spacing(5) }}>
+          <Box
+            key={verse.verse_num}
+            id={verse.verse_num}
+            sx={{ marginBottom: theme.spacing(5) }}
+          >
             <Typography
               className="amiri-regular"
               gutterBottom
