@@ -26,8 +26,6 @@ const Screen = () => {
     }
   }, [verse]);
 
-  console.log(title);
-
   const theme = useTheme();
 
   return (
