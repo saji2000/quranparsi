@@ -7,24 +7,33 @@ import { Typography, useTheme, Box, Container, Divider } from "@mui/material";
 const Screen = () => {
   const { chapter, verse } = useContext(QuranContext);
   const [verses, setVerses] = useState([]);
-  const [title, setTitle] = useState([]);
+  const [title, setTitle] = useState("");
+
+  useEffect(() => {
+    const newTitle = titles.filter((d) => d["chapter_number"] == chapter);
+    setTitle(newTitle);
+  }, [chapter]);
+
+  useEffect(() => {
+    console.log("Updated title:", title);
+  }, [title]); // Add this useEffect
 
   useEffect(() => {
     setVerses(data.filter((d) => d["sura_num"] == chapter));
   }, [chapter]);
 
-  useEffect(() => {
-    setTitle(titles.filter((d) => d["chapter_num"] == chapter));
-  }, [chapter]);
+  // console.log(title);
 
-  useEffect(() => {
-    if (verse && document.getElementById(verse)) {
-      getElementById(verse).scrollIntoView({
-        behaviour: "smooth",
-        block: "start",
-      });
-    }
-  }, [verse]);
+  // console.log(verses);
+
+  // useEffect(() => {
+  //   if (verse && document.getElementById(verse)) {
+  //     getElementById(verse).scrollIntoView({
+  //       behaviour: "smooth",
+  //       block: "start",
+  //     });
+  //   }
+  // }, [verse]);
 
   const theme = useTheme();
 
@@ -38,8 +47,24 @@ const Screen = () => {
         paddingBottom: theme.spacing(4),
       }}
     >
-      <Typography variant="h5">{title.chapter_title_arabic}</Typography>
-      {/* {console.log("verses:", verses)} */}
+      {/* {console.log("title:", title.chapter_title_english)} */}
+      {!title ? (
+        <Typography variant="h5">Loading...</Typography>
+      ) : (
+        <Typography
+          className="amiri-regular"
+          gutterBottom
+          dir="rtl"
+          variant="h4"
+          sx={{ color: theme.palette.text.main }}
+        >
+          {title.length > 0
+            ? title[0].chapter_title_arabic +
+              " | " +
+              title[0].chapter_title_persian
+            : "Title Not Found"}
+        </Typography>
+      )}
       {verses.length > 0 ? (
         verses.map((verse) => (
           <Box
