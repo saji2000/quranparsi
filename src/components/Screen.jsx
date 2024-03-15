@@ -3,28 +3,22 @@ import { QuranContext } from "../context/QuranContext";
 import data from "../data/translation.json";
 import titles from "../data/titles.json";
 import { Typography, useTheme, Box, Container, Divider } from "@mui/material";
+import { digitsEnToFa } from "persian-tools";
 
 const Screen = () => {
   const { chapter, verse } = useContext(QuranContext);
   const [verses, setVerses] = useState([]);
   const [title, setTitle] = useState("");
 
+  // setting the title
   useEffect(() => {
-    const newTitle = titles.filter((d) => d["chapter_number"] == chapter);
-    setTitle(newTitle);
+    setTitle(titles.filter((d) => d["chapter_number"] == chapter));
   }, [chapter]);
 
-  useEffect(() => {
-    console.log("Updated title:", title);
-  }, [title]); // Add this useEffect
-
+  // setting the verses
   useEffect(() => {
     setVerses(data.filter((d) => d["sura_num"] == chapter));
   }, [chapter]);
-
-  // console.log(title);
-
-  // console.log(verses);
 
   // useEffect(() => {
   //   if (verse && document.getElementById(verse)) {
@@ -36,7 +30,6 @@ const Screen = () => {
   // }, [verse]);
 
   const theme = useTheme();
-
   return (
     <Container
       maxWidth={false}
@@ -47,7 +40,6 @@ const Screen = () => {
         paddingBottom: theme.spacing(4),
       }}
     >
-      {/* {console.log("title:", title.chapter_title_english)} */}
       {!title ? (
         <Typography variant="h5">Loading...</Typography>
       ) : (
@@ -78,8 +70,9 @@ const Screen = () => {
               dir="rtl"
               variant="h5"
               sx={{ color: theme.palette.text.main }}
-            >{`${verse.arabic_text} ${verse.verse_num}`}</Typography>
-            {/* <Typography gutterBottom>{verse.english_text}</Typography> */}
+            >{`(${digitsEnToFa(chapter.toString())}:${digitsEnToFa(
+              verse.verse_num.toString()
+            )}) ${verse.arabic_text}`}</Typography>
             <Typography
               dir="rtl"
               variant="h5"
