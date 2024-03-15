@@ -1,4 +1,5 @@
 import { useEffect, useState, useContext } from "react";
+import Verse from "./Verse";
 import { QuranContext } from "../context/QuranContext";
 import data from "../data/translation.json";
 import titles from "../data/titles.json";
@@ -64,34 +65,49 @@ const Screen = () => {
             id={verse.verse_num}
             sx={{ marginBottom: theme.spacing(5) }}
           >
-            <Typography
-              className="amiri-regular"
-              gutterBottom
-              dir="rtl"
-              variant="h5"
-              sx={{ color: theme.palette.text.main }}
-            >{`(${digitsEnToFa(chapter.toString())}:${digitsEnToFa(
-              verse.verse_num.toString()
-            )}) ${verse.arabic_text}`}</Typography>
-            <Typography
-              dir="rtl"
-              variant="h5"
-              sx={{ color: theme.palette.text.main }}
+            <Verse
+              chapter_num={chapter}
+              verse_num={verse.verse_num}
+              arabic={true}
             >
-              {verse.persian_text}{" "}
-            </Typography>
-            {verse.footnote && (
-              <>
-                <Divider sx={{ background: theme.palette.text.main }} />
-                <Typography
-                  variant="h6"
-                  sx={{ color: theme.palette.text.main }}
-                >
-                  {verse.footnote}
-                </Typography>
-              </>
-            )}
+              {verse.arabic_text}
+            </Verse>
+            <Verse arabic={false}>{verse.persian_text}</Verse>
           </Box>
+
+          // <Box
+          //   key={verse.verse_num}
+          //   id={verse.verse_num}
+          //   sx={{ marginBottom: theme.spacing(5) }}
+          // >
+          //   <Typography
+          //     className="amiri-regular"
+          //     gutterBottom
+          //     dir="rtl"
+          //     variant="h5"
+          //     sx={{ color: theme.palette.text.main }}
+          //   >{`(${digitsEnToFa(chapter.toString())}:${digitsEnToFa(
+          //     verse.verse_num.toString()
+          //   )}) ${verse.arabic_text}`}</Typography>
+          //   <Typography
+          //     dir="rtl"
+          //     variant="h5"
+          //     sx={{ color: theme.palette.text.main }}
+          //   >
+          //     {verse.persian_text}{" "}
+          //   </Typography>
+          //   {verse.footnote && (
+          //     <>
+          //       <Divider sx={{ background: theme.palette.text.main }} />
+          //       <Typography
+          //         variant="h6"
+          //         sx={{ color: theme.palette.text.main }}
+          //       >
+          //         {verse.footnote}
+          //       </Typography>
+          //     </>
+          //   )}
+          // </Box>
         ))
       ) : (
         <Typography variant="h4">Loading...</Typography>
