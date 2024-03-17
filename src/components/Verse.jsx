@@ -12,6 +12,13 @@ const Verse = ({ children, chapter }) => {
       id={children.verse_num}
       sx={{ marginBottom: theme.spacing(5) }}
     >
+      {/* Subtitle */}
+      <Typography
+        variant="subtitle1"
+        sx={{ color: theme.palette.text.main, marginBottom: theme.spacing(2) }}
+      >
+        {children.subtitle}{" "}
+      </Typography>
       {/* Arabic text */}
       <Typography
         className="amiri-regular"
