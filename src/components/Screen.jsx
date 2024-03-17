@@ -41,6 +41,7 @@ const Screen = () => {
         paddingBottom: theme.spacing(4),
       }}
     >
+      {/* Chapter title */}
       {!title ? (
         <Typography variant="h5">Loading...</Typography>
       ) : (
@@ -58,57 +59,10 @@ const Screen = () => {
             : "Title Not Found"}
         </Typography>
       )}
-      {verses.length > 0 ? (
-        verses.map((verse) => (
-          <Box
-            key={verse.verse_num}
-            id={verse.verse_num}
-            sx={{ marginBottom: theme.spacing(5) }}
-          >
-            <Verse
-              chapter_num={chapter}
-              verse_num={verse.verse_num}
-              arabic={true}
-            >
-              {verse.arabic_text}
-            </Verse>
-            <Verse arabic={false}>{verse.persian_text}</Verse>
-          </Box>
 
-          // <Box
-          //   key={verse.verse_num}
-          //   id={verse.verse_num}
-          //   sx={{ marginBottom: theme.spacing(5) }}
-          // >
-          //   <Typography
-          //     className="amiri-regular"
-          //     gutterBottom
-          //     dir="rtl"
-          //     variant="h5"
-          //     sx={{ color: theme.palette.text.main }}
-          //   >{`(${digitsEnToFa(chapter.toString())}:${digitsEnToFa(
-          //     verse.verse_num.toString()
-          //   )}) ${verse.arabic_text}`}</Typography>
-          //   <Typography
-          //     dir="rtl"
-          //     variant="h5"
-          //     sx={{ color: theme.palette.text.main }}
-          //   >
-          //     {verse.persian_text}{" "}
-          //   </Typography>
-          //   {verse.footnote && (
-          //     <>
-          //       <Divider sx={{ background: theme.palette.text.main }} />
-          //       <Typography
-          //         variant="h6"
-          //         sx={{ color: theme.palette.text.main }}
-          //       >
-          //         {verse.footnote}
-          //       </Typography>
-          //     </>
-          //   )}
-          // </Box>
-        ))
+      {/* Verses */}
+      {verses.length > 0 ? (
+        verses.map((verse) => <Verse chapter={chapter}>{verse}</Verse>)
       ) : (
         <Typography variant="h4">Loading...</Typography>
       )}
