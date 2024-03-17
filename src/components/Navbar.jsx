@@ -56,19 +56,19 @@ function Navbar({ toggleTheme }) {
         }}
       >
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-          <BasicMenu toggleTheme={toggleTheme} sx={{ marginRight: "0.5em" }} />
+          <BasicMenu toggleTheme={toggleTheme} />
 
           <Typography
-            variant="h6"
+            variant="h5"
             sx={{
               color: theme.palette.text.main,
-              display: { xs: "none", sm: "none", md: "block", lg: "block" },
+              display: { xs: "none", sm: "block", md: "block", lg: "block" },
             }}
           >
             قرآن پارسی
           </Typography>
           <Typography
-            variant="h6"
+            variant="h5"
             sx={{
               color: theme.palette.text.main,
               display: { xs: "none", sm: "none", md: "none", lg: "block" },
@@ -106,7 +106,7 @@ function Navbar({ toggleTheme }) {
                   inputProps={{
                     inputMode: "numeric",
                     pattern: "[0-9۰-۹]*",
-                    sx: { color: theme.palette.text.main },
+                    sx: { color: theme.palette.text.main, width: "3em" },
                   }}
                 />
               </Grid>
@@ -122,7 +122,7 @@ function Navbar({ toggleTheme }) {
                   inputProps={{
                     inputMode: "numeric",
                     pattern: "[0-9۰-۹]*",
-                    sx: { color: theme.palette.text.main },
+                    sx: { color: theme.palette.text.main, width: "3em" },
                   }}
                 />
               </Grid>
