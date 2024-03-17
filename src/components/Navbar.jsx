@@ -20,12 +20,6 @@ function Navbar({ toggleTheme }) {
 
   const [verseInput, setVerseInput] = useState(1);
   const [chapterInput, setChapterInput] = useState(1);
-  const [chapterVerseInput, setchapterVerseInput] = useState(1);
-
-  const handleChapterVerseChange = (event) => {
-    const { value } = event.target;
-    setchapterVerseInput(value);
-  };
 
   const handleChapterChange = (event) => {
     const { value } = event.target;
@@ -38,11 +32,8 @@ function Navbar({ toggleTheme }) {
   };
 
   const onSubmit = () => {
-    // const chapterVerse = chapterVerseInput.split(":");
-    // setVerse(digitsFaToEn(chapterVerse[1]));
-    // setChapter(digitsFaToEn(chapterVerse[0]));
-    setVerse(verseInput);
-    setChapter(chapterInput);
+    setVerse(digitsFaToEn(verseInput));
+    setChapter(digitsFaToEn(chapterInput));
   };
 
   return (
@@ -78,22 +69,6 @@ function Navbar({ toggleTheme }) {
           </Typography>
           <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
             <Grid container spacing={2} alignItems="center">
-              {/* <Grid item>
-                <TextField
-                  id="chapter-search"
-                  label="شماره سوره و ایه"
-                  variant="outlined"
-                  size="small"
-                  placeholder="ایه:سوره"
-                  value={chapterVerseInput}
-                  onChange={handleChapterVerseChange}
-                  inputProps={{
-                    // inputMode: "numeric",
-                    // pattern: "[0-9۰-۹]*",
-                    sx: { color: theme.palette.text.main },
-                  }}
-                />
-              </Grid> */}
               <Grid item>
                 <TextField
                   id="chapter-search"

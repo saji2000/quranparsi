@@ -20,14 +20,15 @@ const Screen = () => {
     setVerses(data.filter((d) => d["sura_num"] == chapter));
   }, [chapter]);
 
-  // useEffect(() => {
-  //   if (verse && document.getElementById(verse)) {
-  //     getElementById(verse).scrollIntoView({
-  //       behaviour: "smooth",
-  //       block: "start",
-  //     });
-  //   }
-  // }, [verse]);
+  useEffect(() => {
+    if (verse && document.getElementById(verse)) {
+      document.getElementById(verse).scrollIntoView({
+        behaviour: "smooth",
+        block: "start",
+      });
+    }
+    console.log(verse);
+  }, [verse]);
 
   const theme = useTheme();
   return (

@@ -15,6 +15,7 @@ const Verse = ({ children, chapter }) => {
       {/* Subtitle */}
       <Typography
         variant="subtitle1"
+        align="center"
         sx={{ color: theme.palette.text.main, marginBottom: theme.spacing(2) }}
       >
         {children.subtitle}{" "}
