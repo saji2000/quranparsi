@@ -4,7 +4,6 @@ import { QuranContext } from "../context/QuranContext";
 import data from "../data/translation.json";
 import titles from "../data/titles.json";
 import { Typography, useTheme, Box, Container, Divider } from "@mui/material";
-import { digitsEnToFa } from "persian-tools";
 
 const Screen = () => {
   const { chapter, verse } = useContext(QuranContext);
@@ -62,7 +61,11 @@ const Screen = () => {
 
       {/* Verses */}
       {verses.length > 0 ? (
-        verses.map((verse) => <Verse chapter={chapter}>{verse}</Verse>)
+        verses.map((verse) => (
+          <Verse key={verse.verse_num} chapter={chapter}>
+            {verse}
+          </Verse>
+        ))
       ) : (
         <Typography variant="h4">Loading...</Typography>
       )}
