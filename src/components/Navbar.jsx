@@ -23,17 +23,38 @@ function Navbar({ toggleTheme }) {
 
   const handleChapterChange = (event) => {
     const { value } = event.target;
-    setChapterInput(value.replace(/[^0-9۰-۹]/g, ""));
+    setChapterInput(digitsFaToEn(value.replace(/[^0-9۰-۹]/g, "")) || "");
   };
 
   const handleVerseChange = (event) => {
     const { value } = event.target;
-    setVerseInput(value.replace(/[^0-9۰-۹]/g, ""));
+    setVerseInput(digitsFaToEn(value.replace(/[^0-9۰-۹]/g, "")) || "");
+  };
+
+  const scrollToVerse = () => {
+    if (document.getElementById(verseInput)) {
+      document.getElementById(verseInput).scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    } else {
+      setTimeout(scrollToVerse, 100);
+    }
   };
 
   const onSubmit = () => {
-    setVerse(digitsFaToEn(verseInput));
-    setChapter(digitsFaToEn(chapterInput));
+    if (chapterInput && chapterInput <= 114 && chapterInput >= 1) {
+      setChapter(chapterInput);
+    } else {
+      alert("این سوره موجود نیست");
+    }
+
+    if (verseInput && verseInput >= 0 && verseInput <= 286) {
+      setVerse(verseInput);
+      scrollToVerse();
+    } else {
+      alert("این ایه موجود نیست");
+    }
   };
 
   return (
