@@ -3,7 +3,7 @@ import Verse from "./Verse";
 import { QuranContext } from "../context/QuranContext";
 import data from "../data/translation.json";
 import titles from "../data/titles.json";
-import { Typography, useTheme, Box, Container, Divider } from "@mui/material";
+import { Typography, useTheme, Container } from "@mui/material";
 
 const Screen = () => {
   const { chapter, verse } = useContext(QuranContext);
@@ -37,8 +37,8 @@ const Screen = () => {
       sx={{
         display: "block",
         backgroundColor: theme.palette.primary.main,
-        paddingTop: theme.spacing("7em"),
-        paddingBottom: theme.spacing(4),
+        paddingTop: theme.spacing("6em"),
+        paddingBottom: theme.spacing("1em"),
       }}
     >
       {/* Chapter title */}

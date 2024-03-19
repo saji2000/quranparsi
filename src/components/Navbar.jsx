@@ -68,6 +68,7 @@ function Navbar({ toggleTheme }) {
         }}
       >
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+          {/* Menu */}
           <BasicMenu toggleTheme={toggleTheme} />
 
           <Typography
@@ -88,6 +89,7 @@ function Navbar({ toggleTheme }) {
           >
             به نام خداوند بخشنده ترین، مهربانترین
           </Typography>
+          {/* Searching for a chapter and a verse */}
           <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
             <Grid container spacing={2} alignItems="center">
               <Grid item>

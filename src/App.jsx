@@ -4,9 +4,13 @@ import Screen from "./components/Screen";
 import Footer from "./components/Footer";
 import { lightTheme, darkTheme } from "./theme";
 import "./App.css";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+import {
+  ThemeProvider,
+  createTheme,
+  responsiveFontSizes,
+} from "@mui/material/styles";
 import { QuranProvider } from "./context/QuranContext";
-import { Container, Box } from "@mui/material";
+import { Box } from "@mui/material";
 
 function App() {
   // Checking system preference and setting the default theme (dark or light)
@@ -24,14 +28,21 @@ function App() {
 
     return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
+
+  // setting the dark theme
   const [theme, setTheme] = useState(prefersDarkMode ? darkTheme : lightTheme);
 
+  // toggling the dark theme
   const toggleTheme = () => {
     setTheme(theme === lightTheme ? darkTheme : lightTheme);
   };
 
+  var appTheme = createTheme(theme);
+  // making the font responsive
+  appTheme = responsiveFontSizes(appTheme);
+
   return (
-    <ThemeProvider theme={createTheme(theme)}>
+    <ThemeProvider theme={appTheme}>
       <QuranProvider>
         <Box flex="block">
           <Navbar toggleTheme={toggleTheme} />
