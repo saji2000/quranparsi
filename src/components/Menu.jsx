@@ -51,12 +51,12 @@ export default function BasicMenu({ toggleTheme }) {
           <ModeNight />
           <Switch onClick={toggleTheme} />
         </MenuItem>
-        <MenuItem>
-          <Link href="https://discord.gg/submission">دیسکورد</Link>
-        </MenuItem>
-        <MenuItem>
-          <Link href="https://www.tiktok.com/@sajadthesubmitter/">تیکتاک</Link>
-        </MenuItem>
+        <Link href="https://discord.gg/submission">
+          <MenuItem>دیسکورد</MenuItem>
+        </Link>
+        <Link href="https://www.tiktok.com/@sajadthesubmitter/">
+          <MenuItem>تیکتاک</MenuItem>
+        </Link>
       </Menu>
     </div>
   );
