@@ -18,8 +18,12 @@ function Navbar({ toggleTheme }) {
 
   const theme = useTheme();
 
-  const [verseInput, setVerseInput] = useState(1);
-  const [chapterInput, setChapterInput] = useState(1);
+  const [verseInput, setVerseInput] = useState(
+    window.localStorage.getItem("verse") || 1
+  );
+  const [chapterInput, setChapterInput] = useState(
+    window.localStorage.getItem("chapter") || 1
+  );
 
   const handleChapterChange = (event) => {
     const { value } = event.target;
@@ -45,6 +49,7 @@ function Navbar({ toggleTheme }) {
   const onSubmit = () => {
     if (chapterInput && chapterInput <= 114 && chapterInput >= 1) {
       setChapter(chapterInput);
+      window.localStorage.setItem("chapter", chapterInput);
     } else {
       alert("این سوره موجود نیست");
     }
@@ -52,6 +57,7 @@ function Navbar({ toggleTheme }) {
     if (verseInput && verseInput >= 0 && verseInput <= 286) {
       setVerse(verseInput);
       scrollToVerse();
+      window.localStorage.setItem("verse", verseInput);
     } else {
       alert("این ایه موجود نیست");
     }
