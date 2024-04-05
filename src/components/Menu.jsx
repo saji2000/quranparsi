@@ -1,15 +1,6 @@
 import { useState } from "react";
 
-import {
-  Button,
-  Link,
-  Menu,
-  MenuItem,
-  Switch,
-  Typography,
-  useTheme,
-  // IconButton,
-} from "@mui/material";
+import { Link, Menu, MenuItem, Switch, useTheme } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 
 import { ModeNight, MoreVert } from "@mui/icons-material";
@@ -24,6 +15,13 @@ export default function BasicMenu({ toggleTheme }) {
     setAnchorEl(null);
   };
   const theme = useTheme();
+
+  const [themeState, setThemeState] = useState(false);
+
+  const changeTheme = () => {
+    toggleTheme();
+    setThemeState(!themeState);
+  };
 
   return (
     <div>
@@ -49,7 +47,7 @@ export default function BasicMenu({ toggleTheme }) {
       >
         <MenuItem>
           <ModeNight />
-          <Switch onClick={toggleTheme} />
+          <Switch onClick={changeTheme} checked={themeState} />
         </MenuItem>
         <Link href="https://discord.gg/submission">
           <MenuItem>دیسکورد</MenuItem>
