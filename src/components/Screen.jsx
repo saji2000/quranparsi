@@ -21,14 +21,13 @@ const Screen = () => {
   }, [chapter]);
 
   useEffect(() => {
-    if (verse && document.getElementById(verse)) {
+    if (verse && document.getElementById(verse) && verses.length > 0) {
       document.getElementById(verse).scrollIntoView({
         behaviour: "smooth",
         block: "start",
       });
     }
-    console.log(verse);
-  }, [verse]);
+  }, [verse, verses]);
 
   const theme = useTheme();
   return (
