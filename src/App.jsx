@@ -11,8 +11,14 @@ import {
 } from "@mui/material/styles";
 import { QuranProvider } from "./context/QuranContext";
 import { Box } from "@mui/material";
+import { useTheme } from "@emotion/react";
 
 function App() {
+  // Checking the user's preferences
+
+  const userTheme = window.localStorage.getItem("theme");
+  console.log(userTheme);
+
   // Checking system preference and setting the default theme (dark or light)
   const prefersDarkMode =
     window.matchMedia &&
@@ -29,7 +35,6 @@ function App() {
     return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
 
-  // setting the dark theme
   const [theme, setTheme] = useState(prefersDarkMode ? darkTheme : lightTheme);
 
   // toggling the dark theme

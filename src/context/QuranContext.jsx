@@ -6,7 +6,9 @@ export const QuranProvider = ({ children }) => {
   const [chapter, setChapter] = useState(
     window.localStorage.getItem("chapter") || 1
   );
-  const [verse, setVerse] = useState(window.localStorage.getItem("verse") || 1);
+  const [verse, setVerse] = useState(
+    window.localStorage.getItem("verse") - 1 || 1
+  );
 
   const value = {
     chapter,

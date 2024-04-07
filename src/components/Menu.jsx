@@ -19,6 +19,7 @@ export default function BasicMenu({ toggleTheme }) {
   const [themeState, setThemeState] = useState(false);
 
   const changeTheme = () => {
+    window.localStorage.setItem("theme", !themeState);
     // toggles the theme
     toggleTheme();
     // makes sure the button state is changed

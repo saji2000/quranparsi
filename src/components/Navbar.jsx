@@ -54,8 +54,8 @@ function Navbar({ toggleTheme }) {
       alert("این سوره موجود نیست");
     }
 
-    if (verseInput && verseInput >= 0 && verseInput <= 286) {
-      setVerse(verseInput);
+    if (verseInput && verseInput > 0 && verseInput <= 286) {
+      setVerse(verseInput - 1);
       scrollToVerse();
       window.localStorage.setItem("verse", verseInput);
     } else {
