@@ -15,7 +15,6 @@ import { useTheme } from "@emotion/react";
 
 function App() {
   // Checking the user's preferences
-
   const userTheme = window.localStorage.getItem("theme");
   console.log(userTheme);
 

@@ -6,6 +6,7 @@ import IconButton from "@mui/material/IconButton";
 import { ModeNight, MoreVert } from "@mui/icons-material";
 
 export default function BasicMenu({ toggleTheme }) {
+  // Anchor for opening and closing the menu
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {

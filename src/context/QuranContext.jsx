@@ -2,6 +2,7 @@ import { createContext, useState } from "react";
 
 export const QuranContext = createContext();
 
+// Quran Context Provider for the chapter and verse number
 export const QuranProvider = ({ children }) => {
   const [chapter, setChapter] = useState(
     window.localStorage.getItem("chapter") || 1

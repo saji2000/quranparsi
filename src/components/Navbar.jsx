@@ -18,6 +18,7 @@ function Navbar({ toggleTheme }) {
 
   const theme = useTheme();
 
+  // Saving the chapter and verse number in the local storage
   const [verseInput, setVerseInput] = useState(
     window.localStorage.getItem("verse") || 1
   );
@@ -25,6 +26,7 @@ function Navbar({ toggleTheme }) {
     window.localStorage.getItem("chapter") || 1
   );
 
+  // Filter to make sure chapter and verse inputted are numbers
   const handleChapterChange = (event) => {
     const { value } = event.target;
     setChapterInput(digitsFaToEn(value.replace(/[^0-9۰-۹]/g, "")) || "");
@@ -35,6 +37,7 @@ function Navbar({ toggleTheme }) {
     setVerseInput(digitsFaToEn(value.replace(/[^0-9۰-۹]/g, "")) || "");
   };
 
+  // Scrolling to the inputted verse
   const scrollToVerse = () => {
     if (document.getElementById(verseInput)) {
       document.getElementById(verseInput).scrollIntoView({
@@ -46,6 +49,7 @@ function Navbar({ toggleTheme }) {
     }
   };
 
+  // Changing chapter and verse number once searched for
   const onSubmit = () => {
     if (chapterInput && chapterInput <= 114 && chapterInput >= 1) {
       setChapter(chapterInput);
