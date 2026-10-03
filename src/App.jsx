@@ -1,55 +1,57 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
+import { ThemeProvider } from "@mui/material/styles";
+import { Box, CssBaseline } from "@mui/material";
 import Navbar from "./components/Navbar";
 import Screen from "./components/Screen";
 import Footer from "./components/Footer";
-import { lightTheme, darkTheme } from "./theme";
-import "./App.css";
-import {
-  ThemeProvider,
-  createTheme,
-  responsiveFontSizes,
-} from "@mui/material/styles";
 import { QuranProvider } from "./context/QuranContext";
-import { Box } from "@mui/material";
-import { useTheme } from "@emotion/react";
+import { getTheme } from "./theme";
+import "./App.css";
+
+const systemMode = () =>
+  window.matchMedia?.("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
 
 function App() {
-  // Checking the user's preferences
-  const userTheme = window.localStorage.getItem("theme");
-  console.log(userTheme);
+  // The user's saved choice wins over the system preference
+  const [mode, setMode] = useState(
+    () => window.localStorage.getItem("theme") || systemMode()
+  );
 
-  // Checking system preference and setting the default theme (dark or light)
-  const prefersDarkMode =
-    window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches;
-
+  // Follow system changes only while the user hasn't picked a theme
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
     const handleChange = (e) => {
-      setTheme(e.matches ? "dark" : "light");
+      if (!window.localStorage.getItem("theme")) {
+        setMode(e.matches ? "dark" : "light");
+      }
     };
-
     mediaQuery.addEventListener("change", handleChange);
-
     return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
 
-  const [theme, setTheme] = useState(prefersDarkMode ? darkTheme : lightTheme);
+  const theme = useMemo(() => getTheme(mode), [mode]);
 
-  // toggling the dark theme
+  // Keep the browser chrome (mobile address bar) in sync with the header
+  useEffect(() => {
+    document
+      .querySelector('meta[name="theme-color"]')
+      ?.setAttribute("content", theme.palette.secondary.main);
+  }, [theme]);
+
   const toggleTheme = () => {
-    setTheme(theme === lightTheme ? darkTheme : lightTheme);
+    const next = mode === "dark" ? "light" : "dark";
+    window.localStorage.setItem("theme", next);
+    setMode(next);
   };
 
-  var appTheme = createTheme(theme);
-  // making the font responsive
-  appTheme = responsiveFontSizes(appTheme);
-
   return (
-    <ThemeProvider theme={appTheme}>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
       <QuranProvider>
-        <Box flex="block">
-          <Navbar toggleTheme={toggleTheme} />
+        <Box sx={{ minHeight: "100dvh", display: "flex", flexDirection: "column" }}>
+          <Navbar mode={mode} toggleTheme={toggleTheme} />
           <Screen />
           <Footer />
         </Box>

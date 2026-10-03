@@ -1,149 +1,74 @@
-import React, { useState, useContext } from "react";
+import { useState, useContext } from "react";
+import { AppBar, Box, Button, IconButton, Toolbar, Typography } from "@mui/material";
+import { DarkMode, ExpandMore, LightMode } from "@mui/icons-material";
+import { digitsEnToFa } from "persian-tools";
 import { QuranContext } from "../context/QuranContext";
+import { getChapter } from "../data/quran";
+import ChapterPicker from "./ChapterPicker";
 import BasicMenu from "./Menu";
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  Grid,
-  TextField,
-  Button,
-  useTheme,
-  Box,
-} from "@mui/material";
-import { digitsFaToEn } from "persian-tools";
+import logo from "../assets/QuranParsi.png";
 
-function Navbar({ toggleTheme }) {
-  const { setChapter, setVerse } = useContext(QuranContext);
-
-  const theme = useTheme();
-
-  // Saving the chapter and verse number in the local storage
-  const [verseInput, setVerseInput] = useState(
-    window.localStorage.getItem("verse") || 1
-  );
-  const [chapterInput, setChapterInput] = useState(
-    window.localStorage.getItem("chapter") || 1
-  );
-
-  // Filter to make sure chapter and verse inputted are numbers
-  const handleChapterChange = (event) => {
-    const { value } = event.target;
-    setChapterInput(digitsFaToEn(value.replace(/[^0-9۰-۹]/g, "")) || "");
-  };
-
-  const handleVerseChange = (event) => {
-    const { value } = event.target;
-    setVerseInput(digitsFaToEn(value.replace(/[^0-9۰-۹]/g, "")) || "");
-  };
-
-  // Scrolling to the inputted verse
-  const scrollToVerse = () => {
-    if (document.getElementById(verseInput)) {
-      document.getElementById(verseInput).scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    } else {
-      setTimeout(scrollToVerse, 100);
-    }
-  };
-
-  // Changing chapter and verse number once searched for
-  const onSubmit = () => {
-    if (chapterInput && chapterInput <= 114 && chapterInput >= 1) {
-      setChapter(chapterInput);
-      window.localStorage.setItem("chapter", chapterInput);
-    } else {
-      alert("این سوره موجود نیست");
-    }
-
-    if (verseInput && verseInput > 0 && verseInput <= 286) {
-      setVerse(verseInput - 1);
-      scrollToVerse();
-      window.localStorage.setItem("verse", verseInput);
-    } else {
-      alert("این ایه موجود نیست");
-    }
-  };
+function Navbar({ mode, toggleTheme }) {
+  const { chapter } = useContext(QuranContext);
+  const [pickerOpen, setPickerOpen] = useState(false);
+  const current = getChapter(chapter);
 
   return (
-    <div>
-      <AppBar
-        position="fixed"
-        sx={{
-          display: "block",
-          backgroundColor: theme.palette.secondary.main,
-          paddingY: "0.5em",
-        }}
-      >
-        <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-          {/* Menu */}
-          <BasicMenu toggleTheme={toggleTheme} />
+    <AppBar
+      position="sticky"
+      color="secondary"
+      elevation={0}
+      sx={{
+        borderBottom: 1,
+        borderColor: "divider",
+        paddingTop: "env(safe-area-inset-top)",
+      }}
+    >
+      <Toolbar sx={{ gap: 1, minHeight: { xs: 56, sm: 64 } }}>
+        {/* Logo and name */}
+        <Box
+          component="img"
+          src={logo}
+          alt=""
+          sx={{ width: 36, height: 36, borderRadius: "50%", flexShrink: 0 }}
+        />
+        <Typography
+          variant="h6"
+          noWrap
+          sx={{ fontWeight: 700, display: { xs: "none", sm: "block" } }}
+        >
+          قرآن پارسی
+        </Typography>
 
-          <Typography
-            variant="h5"
-            sx={{
-              color: theme.palette.text.main,
-              display: { xs: "none", sm: "block", md: "block", lg: "block" },
-            }}
-          >
-            قرآن پارسی
-          </Typography>
-          <Typography
-            variant="h5"
-            sx={{
-              color: theme.palette.text.main,
-              display: { xs: "none", sm: "none", md: "none", lg: "block" },
-            }}
-          >
-            به نام خداوند بخشنده ترین، مهربانترین
-          </Typography>
-          {/* Searching for a chapter and a verse */}
-          <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
-            <Grid container spacing={2} alignItems="center">
-              <Grid item>
-                <TextField
-                  id="chapter-search"
-                  label="شماره سوره"
-                  variant="outlined"
-                  size="small"
-                  placeholder="شماره سوره وارد کنید"
-                  value={chapterInput}
-                  onChange={handleChapterChange}
-                  inputProps={{
-                    inputMode: "numeric",
-                    pattern: "[0-9۰-۹]*",
-                    sx: { color: theme.palette.text.main, width: "3em" },
-                  }}
-                />
-              </Grid>
-              <Grid item>
-                <TextField
-                  id="verse-search"
-                  label="شماره ایه"
-                  variant="outlined"
-                  size="small"
-                  placeholder="شماره ایه وارد کنید"
-                  value={verseInput}
-                  onChange={handleVerseChange}
-                  inputProps={{
-                    inputMode: "numeric",
-                    pattern: "[0-9۰-۹]*",
-                    sx: { color: theme.palette.text.main, width: "3em" },
-                  }}
-                />
-              </Grid>
-              <Grid item>
-                <Button variant="contained" color="button" onClick={onSubmit}>
-                  جستوجو
-                </Button>
-              </Grid>
-            </Grid>
+        <Box sx={{ flexGrow: 1 }} />
+
+        {/* Current chapter, opens the chapter/verse picker */}
+        <Button
+          onClick={() => setPickerOpen(true)}
+          color="inherit"
+          endIcon={<ExpandMore />}
+          sx={{
+            bgcolor: "action.hover",
+            borderRadius: 999,
+            px: 2,
+            minWidth: 0,
+            maxWidth: { xs: "60vw", sm: "none" },
+            "& .MuiButton-endIcon": { marginInlineStart: 0.5, marginInlineEnd: -0.5 },
+          }}
+        >
+          <Box component="span" sx={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+            {digitsEnToFa(String(chapter))}. {current?.chapter_title_persian}
           </Box>
-        </Toolbar>
-      </AppBar>
-    </div>
+        </Button>
+
+        <IconButton color="inherit" onClick={toggleTheme} aria-label="تغییر حالت روشن/تاریک">
+          {mode === "dark" ? <LightMode /> : <DarkMode />}
+        </IconButton>
+        <BasicMenu />
+      </Toolbar>
+
+      <ChapterPicker open={pickerOpen} onClose={() => setPickerOpen(false)} />
+    </AppBar>
   );
 }
 

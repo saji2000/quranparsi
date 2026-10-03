@@ -1,65 +1,47 @@
 import { useState } from "react";
+import { IconButton, ListItemText, Menu, MenuItem } from "@mui/material";
+import { MoreVert } from "@mui/icons-material";
 
-import { Link, Menu, MenuItem, Switch, useTheme } from "@mui/material";
-import IconButton from "@mui/material/IconButton";
+const links = [
+  { label: "دیسکورد", href: "https://discord.gg/submission" },
+  { label: "تیکتاک", href: "https://www.tiktok.com/@sajadthesubmitter/" },
+];
 
-import { ModeNight, MoreVert } from "@mui/icons-material";
-
-export default function BasicMenu({ toggleTheme }) {
+export default function BasicMenu() {
   // Anchor for opening and closing the menu
   const [anchorEl, setAnchorEl] = useState(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-  const theme = useTheme();
-
-  const [themeState, setThemeState] = useState(false);
-
-  const changeTheme = () => {
-    window.localStorage.setItem("theme", !themeState);
-    // toggles the theme
-    toggleTheme();
-    // makes sure the button state is changed
-    setThemeState(!themeState);
-  };
 
   return (
-    <div>
+    <>
       <IconButton
-        aria-label="more"
-        id="long-button"
-        aria-controls={open ? "long-menu" : undefined}
-        aria-expanded={open ? "true" : undefined}
+        color="inherit"
+        aria-label="منو"
         aria-haspopup="true"
-        onClick={handleClick}
-        sx={{ color: theme.palette.text.main }}
+        onClick={(e) => setAnchorEl(e.currentTarget)}
+        sx={{ marginInlineEnd: -1 }}
       >
         <MoreVert />
       </IconButton>
       <Menu
-        id="basic-menu"
         anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        MenuListProps={{
-          "aria-labelledby": "basic-button",
-        }}
+        open={Boolean(anchorEl)}
+        onClose={() => setAnchorEl(null)}
+        anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+        transformOrigin={{ vertical: "top", horizontal: "left" }}
       >
-        <MenuItem>
-          <ModeNight />
-          <Switch onClick={changeTheme} checked={themeState} />
-        </MenuItem>
-        <Link href="https://discord.gg/submission">
-          <MenuItem>دیسکورد</MenuItem>
-        </Link>
-        <Link href="https://www.tiktok.com/@sajadthesubmitter/">
-          <MenuItem>تیکتاک</MenuItem>
-        </Link>
+        {links.map((link) => (
+          <MenuItem
+            key={link.href}
+            component="a"
+            href={link.href}
+            target="_blank"
+            rel="noopener"
+            onClick={() => setAnchorEl(null)}
+          >
+            <ListItemText>{link.label}</ListItemText>
+          </MenuItem>
+        ))}
       </Menu>
-    </div>
+    </>
   );
 }

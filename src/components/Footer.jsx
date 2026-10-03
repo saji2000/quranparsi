@@ -1,12 +1,20 @@
 import { Box, Typography } from "@mui/material";
-import React from "react";
 
 const Footer = () => {
   return (
-    <Box display="flex" justifyContent="center" padding="1em">
-      {/* <Typography>ساخته شده توسط سجاد ;)</Typography> */}
-      <Typography>Sajad • © 2024</Typography>
-      {/* <Typography>Footer</Typography> */}
+    <Box
+      component="footer"
+      sx={{
+        textAlign: "center",
+        py: 3,
+        paddingBottom: "calc(24px + env(safe-area-inset-bottom))",
+        borderTop: 1,
+        borderColor: "divider",
+      }}
+    >
+      <Typography variant="body2" color="text.secondary" dir="ltr">
+        Sajad • © {new Date().getFullYear()}
+      </Typography>
     </Box>
   );
 };

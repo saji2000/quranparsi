@@ -15,7 +15,8 @@ export default defineConfig({
         name: "Quran Parsi",
         short_name: "Quran",
         description: "Quran's translation in Persian",
-        theme_color: "#ffffff",
+        theme_color: "#d0c7b6",
+        background_color: "#f9f7f0",
         icons: [
           {
             src: "./src/assets/react.svg",
