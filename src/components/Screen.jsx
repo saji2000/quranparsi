@@ -50,7 +50,7 @@ const Screen = () => {
           borderColor: "divider",
         }}
       >
-        <Typography variant="body2" color="text.secondary">
+        <Typography color="text.secondary" sx={{ fontSize: { xs: 18, sm: 20 }, fontWeight: 600 }}>
           سوره {digitsEnToFa(String(chapter))} · {digitsEnToFa(String(title.verseCount))} آیه
         </Typography>
         <Typography
@@ -69,7 +69,9 @@ const Screen = () => {
             <Typography className="amiri-regular" sx={{ fontSize: { xs: 26, sm: 30 } }}>
               {basmala.arabic_text}
             </Typography>
-            <Typography color="text.secondary">{basmala.persian_text}</Typography>
+            <Typography color="text.secondary" sx={{ fontSize: { xs: 22, sm: 25 } }}>
+              {basmala.persian_text}
+            </Typography>
           </Box>
         )}
       </Box>

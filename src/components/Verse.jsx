@@ -38,13 +38,13 @@ const Verse = ({ verse, chapter }) => {
           sx={{
             display: "inline-flex",
             alignItems: "center",
-            px: 1.25,
-            height: 26,
+            px: 1.75,
+            height: { xs: 34, sm: 38 },
             borderRadius: 999,
             bgcolor: "verseBadge",
             color: "text.secondary",
-            fontSize: 13,
-            fontWeight: 600,
+            fontSize: { xs: 18, sm: 20 },
+            fontWeight: 700,
             mb: 1.5,
           }}
         >
@@ -60,8 +60,9 @@ const Verse = ({ verse, chapter }) => {
           {verse.arabic_text}
         </Typography>
 
-        {/* Persian text */}
-        <Typography dir="rtl" sx={{ fontSize: { xs: 17, sm: 19 }, lineHeight: 2 }}>
+        {/* Persian text: Vazirmatn renders larger than Amiri at the same
+            pixel size, so this is scaled to look the same size as the Arabic */}
+        <Typography dir="rtl" sx={{ fontSize: { xs: 22, sm: 25 }, lineHeight: 2 }}>
           {verse.persian_text}
         </Typography>
 
