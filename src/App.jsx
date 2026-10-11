@@ -8,10 +8,11 @@ import { QuranProvider } from "./context/QuranContext";
 import { getTheme } from "./theme";
 import "./App.css";
 
+// Follow the device theme; dark when the device doesn't state one
 const systemMode = () =>
-  window.matchMedia?.("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
+  window.matchMedia?.("(prefers-color-scheme: light)").matches
+    ? "light"
+    : "dark";
 
 function App() {
   // The user's saved choice wins over the system preference
@@ -21,10 +22,10 @@ function App() {
 
   // Follow system changes only while the user hasn't picked a theme
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    const handleChange = (e) => {
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: light)");
+    const handleChange = () => {
       if (!window.localStorage.getItem("theme")) {
-        setMode(e.matches ? "dark" : "light");
+        setMode(systemMode());
       }
     };
     mediaQuery.addEventListener("change", handleChange);

@@ -1,5 +1,14 @@
 import { useState, useContext } from "react";
-import { AppBar, Box, Button, IconButton, Toolbar, Typography } from "@mui/material";
+import {
+  AppBar,
+  Box,
+  Button,
+  FormControlLabel,
+  IconButton,
+  Switch,
+  Toolbar,
+  Typography,
+} from "@mui/material";
 import { DarkMode, ExpandMore, LightMode } from "@mui/icons-material";
 import { digitsEnToFa } from "persian-tools";
 import { QuranContext } from "../context/QuranContext";
@@ -9,7 +18,7 @@ import BasicMenu from "./Menu";
 import logo from "../assets/QuranParsi.png";
 
 function Navbar({ mode, toggleTheme }) {
-  const { chapter } = useContext(QuranContext);
+  const { chapter, showArabic, toggleArabic } = useContext(QuranContext);
   const [pickerOpen, setPickerOpen] = useState(false);
   const current = getChapter(chapter);
 
@@ -60,6 +69,18 @@ function Navbar({ mode, toggleTheme }) {
             {digitsEnToFa(String(chapter))}. {current?.chapter_title_persian}
           </Box>
         </Button>
+
+        {/* Arabic text on/off */}
+        <FormControlLabel
+          control={<Switch size="small" checked={showArabic} onChange={toggleArabic} />}
+          label="عربی"
+          sx={{
+            m: 0,
+            gap: 0.25,
+            flexShrink: 0,
+            "& .MuiFormControlLabel-label": { fontSize: 14, fontWeight: 600 },
+          }}
+        />
 
         <IconButton color="inherit" onClick={toggleTheme} aria-label="تغییر حالت روشن/تاریک">
           {mode === "dark" ? <LightMode /> : <DarkMode />}

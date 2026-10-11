@@ -3,11 +3,12 @@ import { Box, Button, Container, Typography } from "@mui/material";
 import { ChevronLeft, ChevronRight } from "@mui/icons-material";
 import { digitsEnToFa } from "persian-tools";
 import Verse from "./Verse";
+import ChapterName from "./ChapterName";
 import { QuranContext } from "../context/QuranContext";
 import { getChapter, versesByChapter } from "../data/quran";
 
 const Screen = () => {
-  const { chapter, verse, jumpId, goTo } = useContext(QuranContext);
+  const { chapter, verse, jumpId, goTo, showArabic } = useContext(QuranContext);
   const title = getChapter(chapter);
   const verses = versesByChapter[chapter] || [];
   const basmala = verses.find((v) => v.verse_num === 0);
@@ -53,22 +54,17 @@ const Screen = () => {
         <Typography color="text.secondary" sx={{ fontSize: { xs: 18, sm: 20 }, fontWeight: 600 }}>
           سوره {digitsEnToFa(String(chapter))} · {digitsEnToFa(String(title.verseCount))} آیه
         </Typography>
-        <Typography
-          className="amiri-regular"
-          component="h1"
-          sx={{ fontSize: { xs: 40, sm: 52 }, lineHeight: 1.6 }}
-        >
-          {title.chapter_title_arabic}
-        </Typography>
-        <Typography variant="h6" component="h2" sx={{ fontWeight: 600 }}>
-          {title.chapter_title_persian}
+        <Typography component="h1" sx={{ fontSize: { xs: 26, sm: 32 }, fontWeight: 600, lineHeight: 1.8, my: 1 }}>
+          <ChapterName chapter={title} />
         </Typography>
 
         {basmala && (
           <Box sx={{ mt: 2, pt: 2, borderTop: 1, borderColor: "divider" }}>
-            <Typography className="amiri-regular" sx={{ fontSize: { xs: 26, sm: 30 } }}>
-              {basmala.arabic_text}
-            </Typography>
+            {showArabic && (
+              <Typography className="amiri-regular" sx={{ fontSize: { xs: 22, sm: 25 }, fontWeight: 400 }}>
+                {basmala.arabic_text}
+              </Typography>
+            )}
             <Typography color="text.secondary" sx={{ fontSize: { xs: 22, sm: 25 } }}>
               {basmala.persian_text}
             </Typography>

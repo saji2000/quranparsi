@@ -10,6 +10,10 @@ export const QuranProvider = ({ children }) => {
   const [verse, setVerse] = useState(() => readNumber("verse"));
   // Bumped on every navigation so jumping to the same verse scrolls again
   const [jumpId, setJumpId] = useState(0);
+  // Arabic text is hidden unless the reader turns it on
+  const [showArabic, setShowArabic] = useState(
+    () => window.localStorage.getItem("showArabic") === "true"
+  );
 
   // Moves to a chapter/verse and remembers it for the next visit
   const goTo = (newChapter, newVerse = 1) => {
@@ -20,7 +24,12 @@ export const QuranProvider = ({ children }) => {
     window.localStorage.setItem("verse", newVerse);
   };
 
-  const value = { chapter, verse, jumpId, goTo };
+  const toggleArabic = () => {
+    window.localStorage.setItem("showArabic", !showArabic);
+    setShowArabic(!showArabic);
+  };
+
+  const value = { chapter, verse, jumpId, goTo, showArabic, toggleArabic };
 
   return (
     <QuranContext.Provider value={value}>{children}</QuranContext.Provider>

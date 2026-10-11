@@ -14,6 +14,7 @@ import {
 } from "@mui/material";
 import { Close, Search } from "@mui/icons-material";
 import { digitsEnToFa, digitsFaToEn } from "persian-tools";
+import ChapterName from "./ChapterName";
 import { QuranContext } from "../context/QuranContext";
 import { chapters, getChapter } from "../data/quran";
 
@@ -191,15 +192,12 @@ const ChapterPicker = ({ open, onClose }) => {
             </Box>
             <Box sx={{ flexGrow: 1, minWidth: 0 }}>
               <Typography sx={{ fontWeight: 600 }} noWrap>
-                {c.chapter_title_persian}
+                <ChapterName chapter={c} />
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 {digitsEnToFa(String(c.verseCount))} آیه
               </Typography>
             </Box>
-            <Typography className="amiri-regular" sx={{ fontSize: 20 }}>
-              {c.chapter_title_arabic}
-            </Typography>
           </ListItemButton>
         ))}
         {filtered.length === 0 && (

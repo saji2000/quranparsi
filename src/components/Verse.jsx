@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Box, Button, Collapse, Typography } from "@mui/material";
 import { ExpandMore } from "@mui/icons-material";
 import { digitsEnToFa } from "persian-tools";
+import { QuranContext } from "../context/QuranContext";
 
 const Verse = ({ verse, chapter }) => {
+  const { showArabic } = useContext(QuranContext);
   const [showFootnote, setShowFootnote] = useState(false);
   const number = digitsEnToFa(String(verse.verse_num));
 
@@ -51,17 +53,19 @@ const Verse = ({ verse, chapter }) => {
           {digitsEnToFa(String(chapter))}:{number}
         </Box>
 
-        {/* Arabic text */}
-        <Typography
-          className="amiri-regular"
-          dir="rtl"
-          sx={{ fontSize: { xs: 26, sm: 30 }, lineHeight: 2, mb: 1.5 }}
-        >
-          {verse.arabic_text}
-        </Typography>
+        {/* Arabic text, only when turned on in the navbar. Same size as the
+            Persian so it never reads larger */}
+        {showArabic && (
+          <Typography
+            className="amiri-regular"
+            dir="rtl"
+            sx={{ fontSize: { xs: 22, sm: 25 }, fontWeight: 400, lineHeight: 2, mb: 1.5 }}
+          >
+            {verse.arabic_text}
+          </Typography>
+        )}
 
-        {/* Persian text: Vazirmatn renders larger than Amiri at the same
-            pixel size, so this is scaled to look the same size as the Arabic */}
+        {/* Persian text */}
         <Typography dir="rtl" sx={{ fontSize: { xs: 22, sm: 25 }, lineHeight: 2 }}>
           {verse.persian_text}
         </Typography>
